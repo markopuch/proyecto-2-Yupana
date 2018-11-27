@@ -27,6 +27,7 @@ public:
     int entrega_denum();
     Yupana resta(Yupana px);
     Yupana multiplicacion(int a);
+    void distribuicion_columna();
 
 
 };
