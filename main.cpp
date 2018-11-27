@@ -12,6 +12,12 @@ int operator *(Yupana lhs, int a) {
     return resul.entrega_denum();
 }
 
+int operator -(Yupana lhs, Yupana rhs) {
+    Yupana resul = lhs.resta(rhs);
+    resul.imprimir_yupa();
+    return resul.entrega_denum();
+}
+
 
 int main() {
     std::cout<<"YUPANA\n";
@@ -19,8 +25,9 @@ int main() {
 
     Yupana a2=Yupana(2199);
 
-    a1.resta(a2);
-    
+    std::cout<<a1+a2;
+    std::cout<<a1-a2;
+
 
     return 0;
 }

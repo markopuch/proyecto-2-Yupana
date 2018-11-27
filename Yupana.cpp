@@ -138,8 +138,6 @@ Yupana Yupana::suma(Yupana px) {
     }
 
     resul.distribuicion_columna();
-    resul.imprimir_yupa();
-
 
     return resul;
 
@@ -167,7 +165,6 @@ Yupana Yupana::resta(Yupana px) {
     }
 
     resul.distribuicion_columna();
-    resul.imprimir_yupa();
 
     return resul;
 }
