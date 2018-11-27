@@ -99,6 +99,8 @@ Yupana Yupana::suma(Yupana px) {
             resul.matriz[i][j]=matriz[i][j]+px.matriz[i][j];
         }
     }
+    //resul.imprimir_yupa();
+    //std::cout<<std::endl;
 
     for(int i=0;i<para;i++) {
         resul.matriz[i][0] =resul.matriz[i][0] + resul.matriz[i][1] * 2 + resul.matriz[i][2] * 3 + resul.matriz[i][3] * 5;
@@ -106,6 +108,9 @@ Yupana Yupana::suma(Yupana px) {
             resul.matriz[i][j]=0;
         }
     }
+    //resul.imprimir_yupa();
+    //std::cout<<std::endl;
+
 
     for(int i=3;i>=0;i--){
         int v=resul.matriz[i][0],R=v%5,C=v/5;
@@ -117,18 +122,28 @@ Yupana Yupana::suma(Yupana px) {
         if(R==2){
             resul.matriz[i][1]++;
         }
-        if(R==3){
+        if(R==3 or R==4){
             resul.matriz[i][2]++;
             int rest= R-3;
             (rest==1)?resul.matriz[i][0]++:0;
         }
+        //resul.imprimir_yupa();
+        //std::cout<<std::endl;
+
         resul.matriz[i][3]=C;
+
+        //std::cout<<std::endl;
+        ///resul.imprimir_yupa();
+       // std::cout<<std::endl;
 
         while(1<C){
             resul.matriz[i-1][0]++;
             C=C-2;
             resul.matriz[i][3]=C;
         }
+        //resul.imprimir_yupa();
+       // std::cout<<std::endl;
+
     }
     return resul;
 
