@@ -26,7 +26,13 @@ int main() {
     Yupana a2=Yupana(2199);
 
     std::cout<<a1+a2;
+    std::cout<<std::endl;
     std::cout<<a1-a2;
+    std::cout<<std::endl;
+    std::cout<<a1*2;
+    std::cout<<std::endl;
+    std::cout<<(a1+a2)-(a1-a2);
+    std::cout<<std::endl;
 
 
     return 0;

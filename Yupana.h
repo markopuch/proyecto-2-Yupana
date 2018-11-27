@@ -21,6 +21,7 @@ public:
 
     Yupana();
     Yupana(int pvalor);
+    ~Yupana(){};
     void reparticion_de_valores();
     void imprimir_yupa();
     Yupana suma(Yupana px);
@@ -28,6 +29,7 @@ public:
     Yupana resta(Yupana px);
     Yupana multiplicacion(int a);
     void distribuicion_columna();
+    Yupana division (int a);
 
 
 };

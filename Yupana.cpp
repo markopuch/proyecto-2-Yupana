@@ -92,6 +92,7 @@ int Yupana::entrega_denum() {
 }
 
 void Yupana::distribuicion_columna() {
+
     for(int i=3;i>=0;i--){
         int v=matriz[i][0],R=v%5,C=v/5;
         matriz[i][0] = 0;
@@ -169,12 +170,16 @@ Yupana Yupana::resta(Yupana px) {
     return resul;
 }
 
-
 Yupana Yupana::multiplicacion(int a) {
     Yupana acu= Yupana(valor);
     Yupana result;
     for(int i=0;i<a;i++){
         result= result.suma(acu);
     }
+
     return result;
+}
+
+Yupana Yupana::division(int a) {
+
 }
