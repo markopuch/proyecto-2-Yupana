@@ -10,6 +10,7 @@ Yupana::Yupana() {
         }
     }
 }
+
 Yupana::Yupana(int pvalor) {
     valor=pvalor;
 
@@ -20,6 +21,7 @@ Yupana::Yupana(int pvalor) {
     }
     reparticion_de_valores();
 }
+
 void Yupana::reparticion_de_valores() {
 
     int M,R=valor;
@@ -59,6 +61,7 @@ void Yupana::reparticion_de_valores() {
 
 
 }
+
 void Yupana::imprimir_yupa() {
 
     for(int i=0;i<para;i++){
@@ -69,19 +72,6 @@ void Yupana::imprimir_yupa() {
     }
 
 }
-Yupana Yupana::suma(Yupana px) {
-    Yupana resul=Yupana();
-    for(int i=0;i<para;i++){
-        for(int j=0;j<para;j++) {
-            resul.matriz[i][j]=matriz[i][j]+px.matriz[i][j];
-        }
-    }
-
-
-
-    return resul;
-
-}
 
 int Yupana::getValor() const {
     return valor;
@@ -89,4 +79,74 @@ int Yupana::getValor() const {
 
 void Yupana::setValor(int valor) {
     Yupana::valor = valor;
+}
+
+int Yupana::entrega_denum() {
+    int num=0;
+    for(int i=3;i>=0;i--) {
+        int k=pow(10,3-i);
+        num=num+(matriz[i][0] + matriz[i][1] * 2 + matriz[i][2] * 3 + matriz[i][3] * 5)*k;
+    }
+    return num;
+
+}
+
+Yupana Yupana::suma(Yupana px) {
+
+    Yupana resul;
+    for(int i=0;i<para;i++){
+        for(int j=0;j<para;j++) {
+            resul.matriz[i][j]=matriz[i][j]+px.matriz[i][j];
+        }
+    }
+
+    for(int i=0;i<para;i++) {
+        resul.matriz[i][0] =resul.matriz[i][0] + resul.matriz[i][1] * 2 + resul.matriz[i][2] * 3 + resul.matriz[i][3] * 5;
+        for(int j=1;j<para;j++){
+            resul.matriz[i][j]=0;
+        }
+    }
+
+    for(int i=3;i>=0;i--){
+        int v=resul.matriz[i][0],R=v%5,C=v/5;
+        resul.matriz[i][0] = 0;
+
+        if(R==1){
+            resul.matriz[i][0]++;
+        }
+        if(R==2){
+            resul.matriz[i][1]++;
+        }
+        if(R==3){
+            resul.matriz[i][2]++;
+            int rest= R-3;
+            (rest==1)?resul.matriz[i][0]++:0;
+        }
+        resul.matriz[i][3]=C;
+
+        while(1<C){
+            resul.matriz[i-1][0]++;
+            C=C-2;
+            resul.matriz[i][3]=C;
+        }
+    }
+    return resul;
+
+}
+
+Yupana Yupana::resta(Yupana px) {
+    //el que esta en el parametro siempre es menor
+    Yupana resul;
+
+    return resul;
+}
+
+
+Yupana Yupana::multiplicacion(int a) {
+    Yupana acu= Yupana(valor);
+    Yupana result;
+    for(int i=0;i<a;i++){
+        result= result.suma(acu);
+    }
+    return result;
 }

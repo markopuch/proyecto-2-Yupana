@@ -10,6 +10,7 @@
 #include <iomanip>
 
 const int para=4;
+
 class Yupana {
 private:
     int valor;
@@ -23,9 +24,14 @@ public:
     void reparticion_de_valores();
     void imprimir_yupa();
     Yupana suma(Yupana px);
+    int entrega_denum();
+    Yupana resta(Yupana px);
+    Yupana multiplicacion(int a);
 
 
 };
+
+
 
 
 #endif //PROYECTO2REAL_YUPANA_H
