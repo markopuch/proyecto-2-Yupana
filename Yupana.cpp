@@ -99,8 +99,8 @@ Yupana Yupana::suma(Yupana px) {
             resul.matriz[i][j]=matriz[i][j]+px.matriz[i][j];
         }
     }
-    //resul.imprimir_yupa();
-    //std::cout<<std::endl;
+    resul.imprimir_yupa();
+    std::cout<<std::endl;
 
     for(int i=0;i<para;i++) {
         resul.matriz[i][0] =resul.matriz[i][0] + resul.matriz[i][1] * 2 + resul.matriz[i][2] * 3 + resul.matriz[i][3] * 5;
@@ -108,8 +108,8 @@ Yupana Yupana::suma(Yupana px) {
             resul.matriz[i][j]=0;
         }
     }
-    //resul.imprimir_yupa();
-    //std::cout<<std::endl;
+    resul.imprimir_yupa();
+    std::cout<<std::endl;
 
 
     for(int i=3;i>=0;i--){
@@ -127,22 +127,22 @@ Yupana Yupana::suma(Yupana px) {
             int rest= R-3;
             (rest==1)?resul.matriz[i][0]++:0;
         }
-        //resul.imprimir_yupa();
-        //std::cout<<std::endl;
+        resul.imprimir_yupa();
+        std::cout<<std::endl;
 
         resul.matriz[i][3]=C;
 
-        //std::cout<<std::endl;
-        ///resul.imprimir_yupa();
-       // std::cout<<std::endl;
+        std::cout<<std::endl;
+        resul.imprimir_yupa();
+        std::cout<<std::endl;
 
         while(1<C){
             resul.matriz[i-1][0]++;
             C=C-2;
             resul.matriz[i][3]=C;
         }
-        //resul.imprimir_yupa();
-       // std::cout<<std::endl;
+        resul.imprimir_yupa();
+        std::cout<<std::endl;
 
     }
     return resul;
@@ -152,6 +152,25 @@ Yupana Yupana::suma(Yupana px) {
 Yupana Yupana::resta(Yupana px) {
     //el que esta en el parametro siempre es menor
     Yupana resul;
+    for(int i=0;i<para;i++){
+        for(int j=0;j<para;j++) {
+            resul.matriz[i][j]=matriz[i][j]-px.matriz[i][j];
+        }
+    }
+    resul.imprimir_yupa();
+    std::cout<<std::endl;
+
+    for(int i=0;i<para;i++) {
+        resul.matriz[i][0] =resul.matriz[i][0] + resul.matriz[i][1] * 2 + resul.matriz[i][2] * 3 + resul.matriz[i][3] * 5;
+        for(int j=1;j<para;j++){
+            resul.matriz[i][j]=0;
+        }
+    }
+    resul.imprimir_yupa();
+    std::cout<<std::endl;
+
+
+
 
     return resul;
 }
